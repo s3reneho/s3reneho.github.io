@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV — Serene Ho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <svg class="mark" viewBox="0 0 40 28" width="26" height="18" aria-hidden="true">
+        <rect x="2" y="14" width="6" height="12" style="fill:var(--ink)"/>
+        <rect x="12" y="6" width="6" height="20" style="fill:var(--ochre)"/>
+        <rect x="22" y="18" width="6" height="8" style="fill:var(--indigo)"/>
+        <rect x="32" y="2" width="6" height="24" style="fill:var(--ink)"/>
+      </svg>
+      Serene Ho
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html" aria-current="page">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:28px;">
+  <div class="container" style="grid-template-columns:1fr;">
+    <div>
+      <p class="eyebrow">Curriculum Vitae</p>
+      <h1 style="font-size:2.1rem;">CV</h1>
+      <p class="prose lede">Full CV available as a PDF.</p>
+      <a class="btn" href="assets/cv/Ho_CV.pdf" target="_blank" rel="noopener">Download CV (PDF) &darr;</a>
+      <div class="todo" style="max-width:66ch;"><strong>To do:</strong> export your CV as a PDF, name it <code>Ho_CV.pdf</code>, and place it in <code>assets/cv/</code> so this button works.</div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>Education</h2>
+    <table class="ledger">
+      <thead><tr><th>Degree</th><th>Institution</th><th>Year</th></tr></thead>
+      <tbody>
+        <tr><td>Ph.D., Political Science</td><td>Massachusetts Institute of Technology</td><td class="mono">expected 2026&ndash;27</td></tr>
+        <tr><td>[Prior degree]</td><td>[Institution]</td><td class="mono">[Year]</td></tr>
+      </tbody>
+    </table>
+    <div class="todo"><strong>To fill in:</strong> your pre-MIT degree(s), dissertation committee formatted per convention, fields/exams, and anything else your CV format calls for (grants, awards, presentations, service, references).</div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    &copy; 2026 Serene Ho.
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    var links = document.getElementById('nav-links');
+    var open = links.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+  });
+</script>
+</body>
+</html>

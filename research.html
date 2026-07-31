@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Serene Ho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <svg class="mark" viewBox="0 0 40 28" width="26" height="18" aria-hidden="true">
+        <rect x="2" y="14" width="6" height="12" style="fill:var(--ink)"/>
+        <rect x="12" y="6" width="6" height="20" style="fill:var(--ochre)"/>
+        <rect x="22" y="18" width="6" height="8" style="fill:var(--indigo)"/>
+        <rect x="32" y="2" width="6" height="24" style="fill:var(--ink)"/>
+      </svg>
+      Serene Ho
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html" aria-current="page">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:36px;">
+  <div class="container" style="grid-template-columns:1fr;">
+    <div>
+      <p class="eyebrow">Dissertation &amp; Working Papers</p>
+      <h1 style="font-size:2.1rem;">Research</h1>
+      <div class="prose lede">
+        <p><em>Heterogeneous Firms and the Politics of Institutional Change</em> argues that firm-level heterogeneity in exposure to globalization and technological change generates divergent political behavior across firms — rather than a uniform &ldquo;business&rdquo; interest — and that this divergence reshapes and repurposes political institutions. The dissertation sits explicitly between two literatures: comparative political economy (Varieties of Capitalism), which treats firms as largely uniform and relies on qualitative and historical evidence, and international political economy, where firms' position in global value chains shapes trade preferences but the analysis stays confined to international institutions.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+
+    <div class="entry">
+      <div class="entry-no">01</div>
+      <div>
+        <div class="entry-tags"><span class="tag status-jmp">Job Market Paper</span></div>
+        <h3 class="entry-title">The Effect of Trade on Wage Protections</h3>
+        <p>This paper develops a common-agency lobbying model — two firms of differing productivity, Cournot competition, a policymaker weighing social welfare against campaign contributions — to show how trade liberalization changes firms' preferences over minimum wage policy. As liberalization lowers the base wage and raises an exporter's wage premium, a binding minimum wage can stop constraining the exporting firm, so a higher wage floor raises only the less productive rival's costs. The model predicts that an exporter's preference over the minimum wage can invert as trade exposure rises, an effect that strengthens as firms' production technologies become more heterogeneous. Using confidential Census microdata, I find that state export intensity is associated with higher minimum wages — an effect concentrated among the most productive exporting firms.</p>
+        <p class="data-tags">Formal model (common-agency lobbying) &middot; LEHD / LFTTD / LBD Census microdata &middot; Causal identification</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-no">02</div>
+      <div>
+        <div class="entry-tags"><span class="tag">Co-authored</span></div>
+        <h3 class="entry-title">U.S. Multinationals and Preferential Market Access</h3>
+        <p>In this related, co-authored paper, we use firm-transaction-level trade data — Panjiva supply-chain records alongside Census LFTTD and LBD/CMF data — to show that U.S. multinational status is associated with roughly two-percentage-point lower preferential tariff rates, an advantage that grows with firm productivity and product diversification.</p>
+        <p class="data-tags">Panjiva supply-chain data &middot; Census LFTTD / LBD-CMF &middot; Firm-transaction-level analysis</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-no">03</div>
+      <div>
+        <div class="entry-tags"><span class="tag status-wip">Work in progress</span></div>
+        <h3 class="entry-title">AI Firms and the Politics of Labor</h3>
+        <p>This project examines how firms adopting artificial intelligence technologies engage in labor politics. Results so far are directionally consistent with the dissertation's broader argument but are not yet statistically significant.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Future Directions</h2>
+    <div class="prose">
+      <p>Beyond the dissertation, I plan to extend this agenda in two directions: the fissuring of the firm — how subcontracting and misclassification change firms' political incentives, studied through SEC 10-K filings and lobbying records — and the devolution of labor policy to states and localities, using 10-Ks and job vacancy data.</p>
+    </div>
+    <div class="todo"><strong>To review:</strong> this paragraph covers only the empirical extensions. If you want to describe the formal-model extensions too, write that framing yourself first — it wasn't in confirmed form when this page was drafted.</div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    &copy; 2026 Serene Ho.
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    var links = document.getElementById('nav-links');
+    var open = links.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+  });
+</script>
+</body>
+</html>

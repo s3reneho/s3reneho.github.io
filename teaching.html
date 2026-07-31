@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teaching — Serene Ho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <svg class="mark" viewBox="0 0 40 28" width="26" height="18" aria-hidden="true">
+        <rect x="2" y="14" width="6" height="12" style="fill:var(--ink)"/>
+        <rect x="12" y="6" width="6" height="20" style="fill:var(--ochre)"/>
+        <rect x="22" y="18" width="6" height="8" style="fill:var(--indigo)"/>
+        <rect x="32" y="2" width="6" height="24" style="fill:var(--ink)"/>
+      </svg>
+      Serene Ho
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html" aria-current="page">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:36px;">
+  <div class="container" style="grid-template-columns:1fr;">
+    <div>
+      <p class="eyebrow">Teaching</p>
+      <h1 style="font-size:2.1rem;">Teaching</h1>
+      <div class="prose lede">
+        <p>[Write 2–4 sentences here on your teaching approach — e.g. how you bring political economy and quantitative methods into the classroom, and how you work with students on research design.]</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>Courses</h2>
+    <table class="ledger">
+      <thead>
+        <tr><th>Role</th><th>Course</th><th>Institution</th><th>Term</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">[TA / Instructor]</td>
+          <td>[Course title]</td>
+          <td>[Institution]</td>
+          <td class="mono">[Term / Year]</td>
+        </tr>
+        <tr>
+          <td class="mono">[TA / Instructor]</td>
+          <td>[Course title]</td>
+          <td>[Institution]</td>
+          <td class="mono">[Term / Year]</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="todo"><strong>To fill in:</strong> replace the placeholder rows above with your actual teaching record. Delete the table entirely if you'd rather list this on the CV only.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Methods &amp; Mentoring</h2>
+    <div class="prose">
+      <p>I'm especially interested in teaching graduate quantitative methods — causal inference and work with large administrative datasets — alongside courses in comparative and international political economy.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    &copy; 2026 Serene Ho.
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    var links = document.getElementById('nav-links');
+    var open = links.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+  });
+</script>
+</body>
+</html>
