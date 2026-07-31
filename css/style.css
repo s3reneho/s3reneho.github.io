@@ -1,0 +1,384 @@
+/* ==========================================================================
+   Serene Ho — academic site
+   Design concept: "customs ledger" — pale ledger paper, ink + stamp colors,
+   numbered entries, hairline rules. The bar mark (varying heights) echoes
+   the dissertation's core idea: firms are heterogeneous, not a uniform bloc.
+   ========================================================================== */
+
+:root {
+  --paper: #EFEAE0;
+  --paper-deep: #E4DCC8;
+  --card: #F7F4EC;
+  --ink: #20242B;
+  --ink-soft: #565248;
+  --ink-faint: #8A8272;
+  --indigo: #2E3F6E;
+  --indigo-soft: #5A6C9C;
+  --ochre: #A8752A;
+  --rule: #D6CEB8;
+  --rule-strong: #B9AF94;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --maxw: 880px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--indigo);
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--ochre); }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------- nav ---------- */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand:hover { color: var(--ink); }
+.brand .mark rect { transition: none; }
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--ochre);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--rule-strong);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 28px 16px;
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { border-top: 1px solid var(--rule); }
+  .nav-links a { display: block; padding: 12px 0; }
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  padding: 64px 0 40px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: start;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: var(--ochre);
+  margin: 0 0 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 4vw, 2.9rem);
+  margin-bottom: 0.2em;
+}
+
+.hero .role {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+}
+.hero .role .sep { color: var(--rule-strong); margin: 0 8px; }
+
+.hero .lede {
+  max-width: 60ch;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+
+.portrait {
+  width: 168px;
+  height: 168px;
+  border-radius: 4px;
+  border: 1px solid var(--rule-strong);
+  overflow: hidden;
+  background: var(--card);
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+@media (max-width: 640px) {
+  .hero .container { grid-template-columns: 1fr; }
+  .portrait { width: 120px; height: 120px; order: -1; }
+}
+
+/* ---------- prose sections ---------- */
+
+.section {
+  padding: 44px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.section:last-of-type { border-bottom: none; }
+
+.section h2 {
+  font-size: 1.05rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.section h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.prose p { margin: 0 0 1.1em; max-width: 68ch; }
+.prose p:last-child { margin-bottom: 0; }
+
+/* ---------- ledger entries (research/papers) ---------- */
+
+.entry {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  padding: 26px 0;
+  border-top: 1px solid var(--rule);
+}
+.entry:first-child { border-top: none; padding-top: 4px; }
+
+.entry-no {
+  font-family: var(--font-mono);
+  color: var(--ink-faint);
+  font-size: 0.95rem;
+  padding-top: 4px;
+}
+
+.entry-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+}
+
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 2px;
+  border: 1px solid var(--rule-strong);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.tag.status-jmp { background: var(--indigo); border-color: var(--indigo); color: var(--paper); }
+.tag.status-wip { background: transparent; color: var(--ochre); border-color: var(--ochre); }
+
+.entry p { max-width: 66ch; color: var(--ink-soft); margin: 0 0 10px; }
+
+.data-tags {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 640px) {
+  .entry { grid-template-columns: 1fr; }
+  .entry-no { padding-top: 0; }
+}
+
+/* ---------- placeholder callouts (things Serene needs to fill in) ---------- */
+
+.todo {
+  border: 1px dashed var(--rule-strong);
+  background: var(--card);
+  border-radius: 4px;
+  padding: 14px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin: 14px 0;
+}
+.todo strong { color: var(--ochre); }
+
+/* ---------- buttons / links list ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 10px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 3px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 18px;
+}
+.contact-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 2px;
+}
+.contact-row a:hover { color: var(--ochre); border-color: var(--ochre); }
+.contact-row svg { width: 15px; height: 15px; stroke: currentColor; fill: none; }
+
+/* ---------- simple table (CV / teaching) ---------- */
+
+table.ledger {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin: 18px 0;
+}
+table.ledger th, table.ledger td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--rule);
+}
+table.ledger th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+table.ledger td.mono { font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-soft); }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  padding: 36px 0 60px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
